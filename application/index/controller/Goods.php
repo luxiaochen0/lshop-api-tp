@@ -11,7 +11,7 @@ class Goods
 {
     public function index()
     {
-        $data = Db::table("goods")->select();
+        $data = Db::table("goods")->paginate(2);
         //throw new \Exception("aaa",400);
         return ResponseData::responseRes(200,'ok',$data);
     }
