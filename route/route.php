@@ -14,7 +14,14 @@ Route::get('think', function () {
 });
 
 Route::get('hello/:name', 'index/hello');
-Route::get('api/goods','goods/index');
+
+Route::group('api', [
+    'goods'   => 'goods/index',
+    'goods2'   => 'goods/index',
+]);
+
+
+Route::miss('index/miss');
 
 return [
 
